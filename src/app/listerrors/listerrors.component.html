@@ -1,0 +1,13 @@
+<table border="1" *ngIf="list; else showerror">
+    <tr *ngFor="let item of list">
+        <td>{{item.code}}</td>
+        <td>{{item.source.pointer}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.detail}}</td>
+    </tr>
+</table>
+<ng-template #showerror>
+    <div *ngIf="errorX">
+        {{errorX.status}} {{errorX.statusText}}
+    </div>
+</ng-template>
